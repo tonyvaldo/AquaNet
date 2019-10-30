@@ -2,47 +2,51 @@
 let size = 100;
 let backDropImage;
 let moreFish;
+let fish = [];
 
 function preload() {
   backDropImage = loadImage('backdrop.jpg')
-fish[1] = loadImage('fish/fish_1.jpg');
-fish[2] = loadImage('fish/fish_2.jpg');
-fish[3] = loadImage('fish/fish_3.jpg');
-fish[4] = loadImage('fish/fish_4.jpg');
-fish[5] = loadImage('fish/fish_5.jpg');
-fish[6] = loadImage('fish/fish_6.jpg');
-fish[7] = loadImage('fish/fish_7.jpg');
-fish[8] = loadImage('fish/fish_8.jpg');
+  fish[1] = loadImage('fish/fish_1.png');
+  fish[2] = loadImage('fish/fish_2.png');
+  fish[3] = loadImage('fish/fish_3.png');
+  fish[4] = loadImage('fish/fish_4.png');
+  fish[5] = loadImage('fish/fish_5.png');
+  fish[6] = loadImage('fish/fish_6.png');
+  fish[7] = loadImage('fish/fish_7.png');
+  fish[8] = loadImage('fish/fish_8.png');
 
 }
 
 
 function setup() {
-	createCanvas(800, 600);
-	image(backDropImage, 0, 0, width, height);
-	stroke(10);
-	  imageMode(CENTER);
+  createCanvas(800, 600);
+  background(0);
+  imageMode(CENTER);
+
+// for (let i = 0; i >9; i++){
+//   fish[i] = new Fish(100,100, 40)
+
+  button = createImg('fish_button.png');
+  button.position(19,19);
+  button.mousePressed(buttonPressed);
 
 
-	// button = createButton("Press for more fish");
-	// button = select('#moreFish')
-	// button.mousePressed(buttonPressed);
-	// button.class("moreFish")
 
-  moreFish = select('#moreFish')
-  moreFish.mousePressed(pumpMoreFish)
-}
 
 // function myCheckedEvent(){
 // size += 50;
-//
-// }
+//}
+}
 
 function draw() {
-	// adding clear() to the draw loop will clear each frame, erasing object trails
-	// clear();
+  for (let i = 0; i < 9; i++){
+    fish[i].move();
+    fish[i].show();
+  }
+  // adding clear() to the draw loop will clear each frame, erasing object trails
+  // clear();
 
-	// ellipse(mouseX, mouseY, size);
+  // ellipse(mouseX, mouseY, size);
 }
 
 function mousePressed() {
@@ -51,6 +55,6 @@ function mousePressed() {
 
 }
 
-function pumpMoreFish(){
+function pumpMoreFish() {
 
 }
