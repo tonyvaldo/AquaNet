@@ -30,7 +30,7 @@ function draw() {
 }
 
 function mousePressed() {
-  image(random(fish), mouseX, mouseY, random(width/4, height/4),random(width/4, height/4));
+  image(random(fish), random(width), random(height),random(width/4, height/4),random(width/4, height/4));
   console.log("fish");
 
 }
