@@ -7,7 +7,7 @@ let fishButton;
 function preload() {
   backDropImage = loadImage('backdrop.jpg')
   for (let i = 0; i< 8; i++){
-    fish[i] = loadImage(`fish/fish_${i+1}.PNG`)
+    fish[i] = loadImage(`fish/fish_${i+1}.png`)
   }
 }
 
@@ -24,18 +24,17 @@ console.log(fish);
 fishButton = select("#moreFish");
 fishButton.mousePressed(pumpMoreFish);
 }
-//
+
 function draw() {
 
 }
-//
+
 function mousePressed() {
   image(random(fish), mouseX, mouseY, random(width/4, height/4),random(width/4, height/4));
   console.log("fish");
 
 }
-//
-//
+
 function pumpMoreFish() {
 
 }
